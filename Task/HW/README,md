@@ -1,1 +1,69 @@
+🧠 What is the OSI Model?
 
+The OSI model is a conceptual framework that standardizes communication functions into 7 layers:
+
+Physical
+Data Link
+Network
+Transport
+Session
+Presentation
+Application
+💬 Telegram Message Flow (Layer by Layer)
+7️⃣ Application Layer
+User interacts with the Telegram app (mobile/desktop/web)
+Message is typed and sent
+Telegram uses its own protocol: MTProto
+
+👉 Handles:
+
+User interface
+Message creation
+API communication
+6️⃣ Presentation Layer
+Data is encrypted before transmission
+Telegram uses strong encryption (MTProto protocol)
+
+👉 Handles:
+
+Encryption / Decryption
+Data formatting
+5️⃣ Session Layer
+Establishes and maintains connection between client and Telegram servers
+
+👉 Handles:
+
+Session authentication
+Connection persistence
+4️⃣ Transport Layer
+Ensures reliable data delivery
+Telegram primarily uses TCP (sometimes UDP for calls)
+
+👉 Handles:
+
+Segmentation
+Error checking
+Flow control
+3️⃣ Network Layer
+Determines the path of the data across networks
+
+👉 Handles:
+
+IP addressing
+Routing (via routers)
+2️⃣ Data Link Layer
+Transfers data between devices on the same network
+
+👉 Handles:
+
+MAC addressing
+Frame transmission
+Error detection (CRC)
+1️⃣ Physical Layer
+Actual transmission of raw bits over hardware
+
+👉 Examples:
+
+Wi-Fi signals 📶
+Ethernet cables 🔌
+Cellular networks 📡
