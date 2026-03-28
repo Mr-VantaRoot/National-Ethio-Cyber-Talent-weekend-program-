@@ -1,7 +1,5 @@
 
 
----
-
 # IP Address Analyzer
 
 A simple Python script to validate, classify, and analyze IPv4 addresses. It determines whether an IP is valid, private or public, and provides detailed network information such as IP class, default subnet mask, network address, broadcast address, total hosts, and usable host range.
@@ -54,16 +52,3 @@ Total Hosts: 254
 Usable Host Range: 192.168.1.1 - 192.168.1.254
 ```
 
----
-
-
----
-
-
-
-
----
-
-Feel free to customize this README further based on your preferences or add any additional sections such as credits, contact info, etc.
-
-Would you like me to prepare the script file name or any other details?
