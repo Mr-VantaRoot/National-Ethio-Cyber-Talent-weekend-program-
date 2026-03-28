@@ -12,3 +12,59 @@ Hint: “Some messages arrive encoded. The transport might reveal patterns in th
 
 Challenge 5:
 Hint: “Even simple pings can carry secrets inside them. Don’t just look at the summary—peek at the payload.”
+
+
+
+Challenge 1:
+Hint: “Sometimes secrets travel unencrypted. Inspect the messages your browser asks for.”  
+Detailed Explanation:  
+
+Many web communications start with unencrypted messages, especially initial HTTP requests before HTTPS is established.  
+These unencrypted requests can include URLs, headers, cookies, or form data that may contain sensitive information or secrets.  
+Use Wireshark to filter HTTP traffic (http) or look at the packets where your browser makes requests (http.request).  
+Inspect the payload of these packets for any plaintext data that looks suspicious or contains clues.  
+Pay attention to GET/POST requests, query parameters, or headers that might carry hidden info.
+
+
+Challenge 2:
+Hint: “Even small questions can carry hidden messages. Check what your system is asking the internet.”  
+Detailed Explanation:  
+
+Your system makes various small network requests, such as DNS queries, system updates, or automatic pings.  
+These small packets can embed hidden messages or clues, especially if they contain unusual strings or domain names.  
+Look at system-generated traffic, like DNS requests (dns) or ICMP echo requests (pings).  
+Use filters like dns or icmp and examine the payloads for anything that looks out of place or encoded.  
+Sometimes, hidden messages are embedded in subdomains or in DNS query names.
+
+
+Challenge 3:
+Hint: “The answer might be broken into pieces across multiple packets. Reassemble to see the whole picture.”  
+Detailed Explanation:  
+
+The secret message or data may be spread across multiple packets in a stream.  
+To understand the full message, you need to reassemble the data from these packets.  
+Use Wireshark's "Follow TCP Stream" feature (Right-click packet > Follow > TCP Stream) to reconstruct the entire conversation.  
+This will show the data in a continuous flow, making hidden messages or encoded content clearer.  
+Be aware that some data might be split due to fragmentation or chunked encoding, so reassembly is crucial.
+
+
+Challenge 4:
+Hint: “Some messages arrive encoded. The transport might reveal patterns in the body rather than the headers.”  
+Detailed Explanation:  
+
+The payloads are encoded or obfuscated, and the encoding isn't apparent in the headers.  
+The relevant clues are in the body of the messages, especially within the specific TCP stream (tcp.stream eq 12).  
+Inspect the payload data for patterns—such as base64 strings, hex sequences, or other encoding formats.  
+Use Follow TCP Stream to see the entire message content, which may reveal encoded secrets.  
+Once identified, you may need to decode the payload manually or with external tools to uncover hidden info.
+
+
+Challenge 5:
+Hint: “Even simple pings can carry secrets inside them. Don’t just look at the summary—peek at the payload.”  
+Detailed Explanation:  
+
+Basic network messages like ICMP pings or small requests may hide secrets in their payload data.  
+Don't just rely on packet summaries or headers; look at the actual payload data of these messages.  
+Use Wireshark filters like icmp for ping requests/replies, then inspect the payload field in detail.  
+Sometimes, the payload of an ICMP packet, which is often ignored, contains hidden messages or encoded data.  
+Carefully analyze these small packets to identify any embedded clues or messages.
