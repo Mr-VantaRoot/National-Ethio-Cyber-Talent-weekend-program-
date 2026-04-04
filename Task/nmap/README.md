@@ -86,3 +86,23 @@ UDP scans are different because UDP is connectionless:
 - If there is no response, the port is often considered open or filtered (since open UDP ports typically do not respond).  
 - Sometimes, Nmap may send application-specific probes to elicit responses for more accurate detection.
 
+---
+
+### How Nmap Performs OS Detection?
+Nmap uses a technique called OS fingerprinting, which involves sending a series of crafted packets to the target and analyzing the responses. The process includes:
+
+- Sending Multiple Probes:  
+
+Nmap sends TCP, UDP, ICMP, and TCP/IP stack probes designed to elicit responses that are unique to specific OS implementations.
+
+
+- Analyzing Responses:  
+
+Nmap examines various aspects of the responses, such as TCP/IP stack behavior, flags, window sizes, TTL (Time To Live), options, sequence numbers, and other TCP/IP fingerprinting characteristics.
+
+Nmap compares the collected response data against a large database of known OS fingerprints.  
+Each fingerprint is a profile of how a particular OS responds to specific probes.
+
+---
+### what is NSE(Nmap Scripting Engine)?
+- Nmap Scripting Engine (NSE) is a powerful feature of the Nmap network scanner that allows users to automate a wide variety of networking tasks. It transforms Nmap from a standard port scanner into a versatile tool for vulnerability detection, advanced service discovery, and security auditing
