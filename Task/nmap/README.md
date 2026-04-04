@@ -72,3 +72,5 @@ This foundational understanding will prepare you for more advanced topics about 
 
 ---
 
+Nmap primarily interacts most with the Network Layer (Layer 3) of the OSI model. This is because Nmap performs network scanning, IP address scanning, and port scanning, which involve sending packets at the network layer to discover hosts, open ports, and services running on target systems. While it can also involve some interaction with the Transport Layer (Layer 4) when probing specific ports, its core operations are centered on Layer 3 for network discovery and host enumeration.
+
