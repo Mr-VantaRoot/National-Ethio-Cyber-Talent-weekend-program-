@@ -72,4 +72,3 @@ This foundational understanding will prepare you for more advanced topics about 
 
 ---
 
-Let me know if you'd like me to proceed with Lesson 2 or focus on a specific aspect of Nmap!
