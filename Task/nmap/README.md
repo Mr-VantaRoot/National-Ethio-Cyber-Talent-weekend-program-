@@ -1,6 +1,4 @@
-Certainly! Here's the first in the series: a deep, comprehensive explanation of the question **"What is Nmap?"**. 
 
----
 
 ### Lesson 1: What is Nmap?
 
