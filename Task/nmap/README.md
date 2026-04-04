@@ -74,3 +74,15 @@ This foundational understanding will prepare you for more advanced topics about 
 
 Nmap primarily interacts most with the Network Layer (Layer 3) of the OSI model. This is because Nmap performs network scanning, IP address scanning, and port scanning, which involve sending packets at the network layer to discover hosts, open ports, and services running on target systems. While it can also involve some interaction with the Transport Layer (Layer 4) when probing specific ports, its core operations are centered on Layer 3 for network discovery and host enumeration.
 
+---
+
+### UDP Scan
+UDP scans are different because UDP is connectionless:
+
+- Nmap sends a UDP packet to the target port.  
+- Since UDP does not establish connections, no handshake occurs.  
+#Responses:
+- If there's an ICMP "port unreachable" message, the port is considered closed.  
+- If there is no response, the port is often considered open or filtered (since open UDP ports typically do not respond).  
+- Sometimes, Nmap may send application-specific probes to elicit responses for more accurate detection.
+
